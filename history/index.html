@@ -17,7 +17,7 @@
   <meta name="author" content="volker1">
   <style>
     #bg {
-      background: url(../assets/bases/redcastleshader.png) no-repeat;
+      background: url(../assets/bases/redcastleshader.webp) no-repeat;
       background-size: cover;
     }
   </style>
@@ -26,12 +26,14 @@
   <div id="bg"></div>
   <div class="window">
     <div class="titlebar">
-      <img src="../assets/newIcon.png" alt="DonFuer logo">
+      <label for="nb" id="nbl" aria-label="Toggle menu">&#9776;</label>
+      <img src="../assets/icon1.png" alt="DonFuer logo">
       <div class="titletext">
         <h1>DonFuer</h1>
         <span>A multi-server Minecraft building group</span>
       </div>
     </div>
+    <input type="checkbox" id="nb">
     <div class="body">
       <aside class="side">
         <nav class="rawbg" id="nav">

@@ -15,11 +15,11 @@
   --w-font:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Open Sans',sans-serif;
 }
 *{box-sizing:border-box;}
-html,body{margin:0;}
+html,body{margin:0;overflow-x:hidden;}
 body{
   font-family:var(--w-font);color:var(--w-text);
   background:linear-gradient(rgba(8,8,10,.72),rgba(8,8,10,.86)),
-             url(/wiki/wiki_bg.png) center/cover no-repeat fixed;
+             url(/wiki/wiki_bg.webp) center/cover no-repeat fixed;
   min-height:100vh;
 }
 a{color:var(--w-link);text-decoration:none;}
@@ -61,6 +61,14 @@ a:hover{text-decoration:underline;}
 }
 .wikibar a:hover{background:rgba(255,255,255,.08);text-decoration:none;}
 .wikibar .sep{color:#555;}
+
+/* mobile nav toggle — hidden on desktop */
+#nb{position:absolute;width:0;height:0;opacity:0;pointer-events:none;}
+#nbl{
+  display:none;place-items:center;cursor:pointer;user-select:none;margin-right:6px;
+  width:38px;height:32px;border-radius:8px;color:#fff;font-size:20px;line-height:1;
+  background:var(--w-panel);border:1px solid var(--w-line);
+}
 
 /* layout */
 .wrap{
@@ -144,7 +152,17 @@ a:hover{text-decoration:underline;}
 }
 
 @media only screen and (max-width:820px){
+  /* stack the header so it can't overflow sideways */
+  .wikihead{flex-direction:column;align-items:stretch;}
+  .wikitop{padding:10px 16px 2px;}
+  .wikitop img{width:46px;height:46px;}
+  .wikitop h1{font-size:1.25rem;}
+  .wikitop h1 small{font-size:.72rem;}
+  .wikibar{padding:2px 16px 8px;flex-wrap:wrap;}
+  .wikibar .crumb{margin-right:0;}
   .wrap{grid-template-columns:1fr;}
-  .wikinav{position:static;}
+  .wikinav{position:static;display:none;}
+  #nb:checked ~ .wrap .wikinav{display:block;}
+  #nbl{display:grid;margin-right:auto;}
   .cards{grid-template-columns:1fr;}
 }

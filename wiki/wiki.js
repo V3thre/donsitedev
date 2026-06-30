@@ -48,16 +48,18 @@
   body.innerHTML =
     '<div class="wikihead">' +
       '<header class="wikitop">' +
-        '<img src="/assets/newIcon.png" alt="DonFuer logo">' +
+        '<img src="/assets/icon1.png" alt="DonFuer logo">' +
         '<h1>DonFuer Wiki<small>An archive of the DonFuer building group</small></h1>' +
       '</header>' +
       '<nav class="wikibar">' +
+        '<label for="nb" id="nbl" aria-label="Toggle menu">&#9776;</label>' +
         crumbHtml +
         '<a href="/"> ← Back to Site</a>' +
         '<span class="sep">|</span>' +
         '<a href="/discord">Discord</a>' +
       '</nav>' +
     '</div>' +
+    '<input type="checkbox" id="nb">' +
     '<div class="wrap">' +
       '<aside class="wikinav">' +
         '<div class="seclabel">Navigation</div>' + links(NAV) +
