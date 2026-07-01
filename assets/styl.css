@@ -154,9 +154,9 @@ body{
     background:#0a0a0c;margin:0;
 }
 
-/* scale all rem-based text/buttons with the window, floored so it never gets too small */
+/* scale rem-based text with the window, but never below the user's own default font-size (a11y) */
 html{
-    font-size:max(15px, calc(var(--w) / 71.25));
+    font-size:max(1em, calc(var(--w) / 71.25));
 }
 
 .window{
@@ -331,7 +331,7 @@ html{
 
 .hero-text h2{
     margin:0;font-size:5.6rem;font-weight:800;letter-spacing:.5px;
-    background:radial-gradient(300% 100% at 50% -20%,rgba(255,255,255,.54) 0%,rgba(255,255,255,.54) 66%,rgba(255,255,255,0.5) 70%),rgba(255, 255, 255, 0.45);
+    background:var(--gloss),rgba(255,255,255,0.45);
     -webkit-background-clip:text;background-clip:text;
     color:transparent;-webkit-text-fill-color:transparent;
     -webkit-text-stroke:0.35px rgba(255, 255, 255, 0.5);paint-order:stroke fill;
@@ -425,7 +425,7 @@ html{
     #nav{display:flex;}
     #nbl{display:grid;}
     .titlebar img{width:60px;height:60px;left:16px;}
-    .titletext{margin-left:88px;}
+    .titletext{margin-left:88px;margin-right:64px;}
     .titletext h1{font-size:1.6rem;}
     .titletext span{font-size:.92rem;}
 }
