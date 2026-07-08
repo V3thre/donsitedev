@@ -278,7 +278,7 @@ html{
 
 /* content */
 .content{
-    padding:14px;display:flex;flex-direction:column;gap:14px;min-height: 450px;
+    padding:14px;display:flex;flex-direction:column;gap:14px;min-height: 500px;
 }
 
 .content .main{
