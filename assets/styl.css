@@ -400,6 +400,9 @@ html{
 .cards-2{
     display:grid;grid-template-columns:1fr 1fr;gap:14px;
 }
+.card .cards-2{
+    margin-top:12px;
+}
 
 .grid{
     display:grid;grid-template-columns:1fr 1fr;gap:12px;
